@@ -149,7 +149,6 @@ def run_silver():
     logger.info('Reading bronze data')
     select_cols = ', '.join([
         f'"{col}"' for col in EXPECTED_COLUMNS
-        if col != 'two_point_conv_result'
     ])
 
     df_bronze = pl.read_database(

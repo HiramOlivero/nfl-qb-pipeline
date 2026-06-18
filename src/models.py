@@ -59,7 +59,7 @@ class RawMayePlays(Base):
     interception = Column(Integer)
     sack = Column(Integer)
     pass_location = Column(String)
-    pass_lenght = Column(String)
+    pass_length = Column(String)
     td_team = Column(String)
     td_player_name = Column(String)
     receiver_player_name = Column(String)
