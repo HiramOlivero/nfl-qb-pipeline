@@ -21,12 +21,16 @@ def build_situational_splits(df: pl.DataFrame) -> pl.DataFrame:
             # Score bucket
             pl.when(pl.col('score_diff') <= -14)
                 .then(pl.lit('Losing big'))
+
             .when(pl.col('score_diff') < 0)
                 .then(pl.lit('Losing'))
+
             .when(pl.col('score_diff') == 0)
                 .then(pl.lit('Tied'))
+
             .when(pl.col('score_diff') <= 14)
                 .then(pl.lit('Winning'))
+            
             .otherwise(pl.lit('Winning big'))
             .alias('score_bucket'),
 
